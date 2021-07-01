@@ -1,0 +1,23 @@
+<div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">@</span>
+    <input
+      type="text"
+      name="taskName"
+      [(ngModel)]="task"
+      class="form-control"
+      placeholder="Add A Task"
+      aria-label="addTask"
+      aria-describedby="addTask"
+      required
+      #taskName="ngModel"
+    />
+
+    <button class="btn btn-primary" (click)="addNewTask()">
+      Add <i class="fa fa-plus"></i>
+    </button>
+  </div>
+  <div class="alert alert-danger" *ngIf="error">
+    <div *ngIf="taskName.errors?.required">Task name is required</div>
+  </div>
+</div>

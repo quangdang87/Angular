@@ -1,0 +1,38 @@
+<div class="container">
+  <div *ngFor="let task of taskList" class="border rouded">
+    <div class="row m-2">
+      <div class="col-8">
+        <p class="my-2">{{ task.name }}</p>
+        <div *ngIf="edit._id === task._id && edit.editting">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              name="editing"
+              [(ngModel)]="newTask"
+              placeholder="Add new name for current task"
+              class="form-control"
+              required
+            />
+            <button class="btn btn-success" (click)="saveEdit()">
+              Save <i class="fa fa-save"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button
+            class="me-2 btn btn-warning right"
+            (click)="editTask(task._id)"
+          >
+            Edit <i class="fa fa-edit"></i>
+          </button>
+          <button class="btn btn-danger right" (click)="deleteTask(task._id)">
+            Delete <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
