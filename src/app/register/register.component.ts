@@ -20,12 +20,9 @@ export class RegisterComponent implements OnInit {
 
   onSubmit = () => {
     const { name, email, password } = this.newUser.value;
-    console.log('Name: ', name);
-    console.log('email: ', email);
-    console.log('password: ', password);
+
     this.auth.register(this.newUser.value).subscribe(
       (data: any) => {
-        console.log(data);
         localStorage.setItem('token', data.data);
         this.router.navigate(['/tasks']);
       },
