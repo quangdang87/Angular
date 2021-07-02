@@ -2,13 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {
+    this.auth.isLoggedIn.subscribe((res) => {
+      if (res) {
+        this.router.navigate(['tasks']);
+      }
+    });
+  }
 
   ngOnInit(): void {}
 
@@ -19,17 +26,19 @@ export class RegisterComponent implements OnInit {
   });
 
   onSubmit = () => {
-    const { name, email, password } = this.newUser.value;
+    const { name } = this.newUser.value;
 
     this.auth.register(this.newUser.value).subscribe(
       (data: any) => {
+        console.log('registed successed');
         localStorage.setItem('token', data.data);
-        this.router.navigate(['/tasks']);
+        this.auth.isLoggedIn.next(true);
+        this.auth.name.next(name);
       },
       (err) => {
         console.log('error happened: ', err);
         this.newUser.reset();
-        this.router.navigate(['/login']);
+        this.router.navigate(['login']);
       }
     );
   };

@@ -3,6 +3,7 @@
     <ul class="navbar-nav">
       <li class="nav-item" *ngIf="isLoggedIn; else loggedOut">
         <a class="nav-link" (click)="logOut()">Logout</a>
+          <h5>Hi {{ name }}</h5>
       </li>
       <ng-template #loggedOut>
         <li class="nav-item">

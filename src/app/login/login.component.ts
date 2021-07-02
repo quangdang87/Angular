@@ -8,18 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private authServer: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
   email = '';
   password = '';
   ngOnInit(): void {}
 
   onSubmit = () => {
-    console.log('this.email: ', this.email);
-    this.authServer
+    this.authService
       .login({ email: this.email, password: this.password })
       .subscribe(
         (data: any) => {
           localStorage.setItem('token', data.token);
+          this.authService.isLoggedIn.next(true);
+          this.authService.name.next(data.name);
           this.router.navigate(['tasks']);
         },
         (err) => {
