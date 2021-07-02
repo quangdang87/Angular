@@ -7,11 +7,10 @@ import { Task } from './model/task';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  taskList: Task[] = [];
-
-  addTask = (t: Task): void => {
-    console.log('addTask function in app component is call');
-    this.taskList.push(t);
-    console.log(this.taskList);
-  };
+  // taskList: Task[] = [];
+  // addTask = (t: Task): void => {
+  //   console.log('addTask function in app component is call');
+  //   this.taskList.push(t);
+  //   console.log(this.taskList);
+  // // };
 }

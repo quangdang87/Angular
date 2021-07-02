@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Task } from '../model/task';
@@ -11,15 +11,32 @@ export class AddNewTaskService {
   url: string = 'http://localhost:5000/tasks';
 
   getAllTasks() {
-    return this.http.get<Task[]>(this.url);
+    //read token
+    let token: string | null = localStorage.getItem('token');
+    if (!token) token = '';
+    return this.http.get<Task[]>(this.url, {
+      headers: new HttpHeaders().set('x-auth-token', token),
+    });
   }
   addNewTasks(task: any): Observable<Task> {
-    return this.http.post<Task>(this.url, task);
+    let token: string | null = localStorage.getItem('token');
+    if (!token) token = '';
+    return this.http.post<Task>(this.url, task, {
+      headers: new HttpHeaders().set('x-auth-token', token),
+    });
   }
   deleteTask(_id: string) {
-    return this.http.delete(`${this.url}/?_id=${_id}`);
+    let token: string | null = localStorage.getItem('token');
+    if (!token) token = '';
+    return this.http.delete(`${this.url}/?_id=${_id}`, {
+      headers: new HttpHeaders().set('x-auth-token', token),
+    });
   }
   editTask(task: Task) {
-    return this.http.put(this.url, task);
+    let token: string | null = localStorage.getItem('token');
+    if (!token) token = '';
+    return this.http.put(this.url, task, {
+      headers: new HttpHeaders().set('x-auth-token', token),
+    });
   }
 }
