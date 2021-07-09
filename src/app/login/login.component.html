@@ -1,14 +1,22 @@
 <div class="container">
   <h1>Login</h1>
-  <form class="form-control" (ngSubmit)="onSubmit()">
+  <form class="form-control" (ngSubmit)="onSubmit()" #form="ngForm">
     <label for="email">email</label>
     <input
-      type="text"
+      type="email"
       name="email"
       id="email"
       [(ngModel)]="email"
       class="form-control"
+      required
+      #userEmail="ngModel"
     />
+    <div
+      class="alert alert-danger"
+      *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)"
+    >
+      <p *ngIf="userEmail.errors?.required">Email is required</p>
+    </div>
     <label for="password">Password</label>
     <input
       type="text"
@@ -16,7 +24,22 @@
       id="password"
       [(ngModel)]="password"
       class="form-control"
+      required
+      minlength="3"
+      #userPassword="ngModel"
     />
-    <input type="submit" value="Submit" class="btn btn-primary" />
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        userPassword.invalid && (userPassword.dirty || userPassword.touched)
+      "
+    >
+      <p *ngIf="userPassword.errors?.required">Password is required</p>
+
+      <p *ngIf="userPassword.errors?.minlength">
+        Password has to have at least 3 characters.
+      </p>
+    </div>
+    <button class="btn btn-primary" [disabled]="form.invalid">Submit</button>
   </form>
 </div>

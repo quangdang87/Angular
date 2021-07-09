@@ -3,6 +3,12 @@
   <form [formGroup]="newUser" (ngSubmit)="onSubmit()">
     <label for="name"> Name: </label>
     <input type="text" class="form-control" id="name" formControlName="name" />
+    <div
+      class="alert alert-danger"
+      *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+    >
+      <p *ngIf="name?.errors?.required">Name is required</p>
+    </div>
     <label for="email"> Email: </label>
     <input
       type="email"
@@ -10,6 +16,12 @@
       id="email"
       formControlName="email"
     />
+    <div
+      class="alert alert-danger"
+      *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+    >
+      <p *ngIf="email?.errors?.required">Email is required</p>
+    </div>
     <label for="password"> Password: </label>
     <input
       type="password"
@@ -17,6 +29,15 @@
       id="password"
       formControlName="password"
     />
+    <div
+      class="alert alert-danger"
+      *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+    >
+      <p *ngIf="password?.errors?.required">Password is required</p>
+      <p *ngIf="password?.errors?.minlength">
+        Password has to have at least 3 characters
+      </p>
+    </div>
     <input type="submit" class="btn btn-primary" value="Submit" />
   </form>
 </div>
