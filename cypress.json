@@ -1,6 +1,6 @@
 {
   "baseUrl": "http://localhost:4200",
-
+  "projectId": "4xu195",
   "reporter": "mochawesome",
   "reporterOptions": {
     "reportDir": "cypress/results/json",

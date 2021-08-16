@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 1,
-    "start": "2021-08-16T16:48:19.375Z",
-    "end": "2021-08-16T16:48:33.277Z",
-    "duration": 13902,
+    "start": "2021-08-16T17:55:27.561Z",
+    "end": "2021-08-16T17:55:38.249Z",
+    "duration": 10688,
     "testsRegistered": 4,
     "passPercent": 75,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "58de76ff-5bce-480c-8de3-426a14f5c4ab",
+      "uuid": "9aa34e53-4e52-4ce0-a763-1a289d713e56",
       "title": "",
       "fullFile": "cypress/integration/test1.spec.js",
       "file": "cypress/integration/test1.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e43524c7-f0ec-432c-8c89-6dbc5a1bed44",
+          "uuid": "ea87a076-5b2f-49fe-8875-09abbda41ab1",
           "title": "todo app Test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "test visit the page",
               "fullTitle": "todo app Test test visit the page",
               "timedOut": null,
-              "duration": 7121,
+              "duration": 4080,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.get(\"h1\").contains(\"Login\");\ncy.then(() => {\n  expect(window.localStorage.getItem(\"token\")).to.be.null;\n});",
               "err": {},
-              "uuid": "5badf651-f4cf-4764-8394-14f7a5cf2631",
-              "parentUUID": "e43524c7-f0ec-432c-8c89-6dbc5a1bed44",
+              "uuid": "5d2e3b11-6412-46f2-a8b4-c081d841543d",
+              "parentUUID": "ea87a076-5b2f-49fe-8875-09abbda41ab1",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "test login with credentials",
               "fullTitle": "todo app Test test login with credentials",
               "timedOut": null,
-              "duration": 1313,
+              "duration": 1318,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,27 +65,27 @@
               "context": null,
               "code": "cy.get(\"input[id=email]\").type(\"quang@gmail.com\");\ncy.get(\"input[id=password]\").type(\"123\");\ncy.get(\"button\").contains(\"Submit\").should(\"not.be.disabled\").click();",
               "err": {},
-              "uuid": "7e676d21-94d8-4d27-bb11-4fbb3faab9f3",
-              "parentUUID": "e43524c7-f0ec-432c-8c89-6dbc5a1bed44",
+              "uuid": "c9ebcd96-0080-441f-83b0-420ef109cad2",
+              "parentUUID": "ea87a076-5b2f-49fe-8875-09abbda41ab1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5badf651-f4cf-4764-8394-14f7a5cf2631",
-            "7e676d21-94d8-4d27-bb11-4fbb3faab9f3"
+            "5d2e3b11-6412-46f2-a8b4-c081d841543d",
+            "c9ebcd96-0080-441f-83b0-420ef109cad2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8434,
+          "duration": 5398,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "44941e62-40f0-45b7-b033-2c5bcbe71ac0",
+          "uuid": "ff890bdd-7a21-44b8-afc0-7680be3233ef",
           "title": "testing with credential",
           "fullFile": "",
           "file": "",
@@ -96,7 +96,7 @@
               "title": "Check for logout button",
               "fullTitle": "testing with credential Check for logout button",
               "timedOut": null,
-              "duration": 538,
+              "duration": 340,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -105,8 +105,8 @@
               "context": null,
               "code": "cy.get(\"ul li a\").contains(\"Logout\");",
               "err": {},
-              "uuid": "b5b0f5bb-0684-49d5-a7de-95faec690def",
-              "parentUUID": "44941e62-40f0-45b7-b033-2c5bcbe71ac0",
+              "uuid": "fc438880-75f5-4ff5-97c2-336d38203482",
+              "parentUUID": "ff890bdd-7a21-44b8-afc0-7680be3233ef",
               "isHook": false,
               "skipped": false
             },
@@ -114,7 +114,7 @@
               "title": "test content page with mock user",
               "fullTitle": "testing with credential test content page with mock user",
               "timedOut": null,
-              "duration": 4790,
+              "duration": 4814,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -127,22 +127,22 @@
                 "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `p`, but never found it.\n    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress\\integration\\test1.spec.js:128:8)",
                 "diff": null
               },
-              "uuid": "66896722-5521-4e1f-9d56-c6979144a1b0",
-              "parentUUID": "44941e62-40f0-45b7-b033-2c5bcbe71ac0",
+              "uuid": "d7b588ac-081b-4ad3-947c-e186b3bd0120",
+              "parentUUID": "ff890bdd-7a21-44b8-afc0-7680be3233ef",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b5b0f5bb-0684-49d5-a7de-95faec690def"
+            "fc438880-75f5-4ff5-97c2-336d38203482"
           ],
           "failures": [
-            "66896722-5521-4e1f-9d56-c6979144a1b0"
+            "d7b588ac-081b-4ad3-947c-e186b3bd0120"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 5328,
+          "duration": 5154,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
