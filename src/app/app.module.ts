@@ -11,7 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
-import { EmailValidatorDirective } from './directives/email-validator.directive';
+import { DeleteTaskComponent } from './delete-task/delete-task.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { EmailValidatorDirective } from './directives/email-validator.directive'
     TasksComponent,
     LoginComponent,
     HeaderComponent,
-    EmailValidatorDirective,
+    DeleteTaskComponent,
   ],
   imports: [
     BrowserModule,

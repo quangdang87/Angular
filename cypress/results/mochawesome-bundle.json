@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-13T19:06:05.448Z",
+    "end": "2021-08-13T19:06:09.980Z",
+    "duration": 4467,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "70c2b305-4cde-47ef-b4b5-a093b49ef1f0",
+      "title": "",
+      "fullFile": "cypress/integration/test1.spec.js",
+      "file": "cypress/integration/test1.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f7b4180c-ce9f-4c3f-a516-eca101b1d02c",
+          "title": "todo app Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test visit the page",
+              "fullTitle": "todo app Test test visit the page",
+              "timedOut": null,
+              "duration": 2826,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h1\").contains(\"Login\");\ncy.then(() => {\n  expect(window.localStorage.getItem(\"token\")).to.be.null;\n});",
+              "err": {},
+              "uuid": "c932a5bc-ff81-4290-99dc-5632b23b1fe3",
+              "parentUUID": "f7b4180c-ce9f-4c3f-a516-eca101b1d02c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "test login with credentials",
+              "fullTitle": "todo app Test test login with credentials",
+              "timedOut": null,
+              "duration": 1062,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"input[id=email]\").type(\"quang@gmail.com\");\ncy.get(\"input[id=password]\").type(\"123\");\ncy.get(\"button\").contains(\"Submit\").should(\"not.be.disabled\").click();",
+              "err": {},
+              "uuid": "6f66e6c6-4795-4f1d-9e56-4cbbc5a0b045",
+              "parentUUID": "f7b4180c-ce9f-4c3f-a516-eca101b1d02c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c932a5bc-ff81-4290-99dc-5632b23b1fe3",
+            "6f66e6c6-4795-4f1d-9e56-4cbbc5a0b045"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3888,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "63b1d068-b0a4-47eb-bc9f-317a5b41bfa8",
+          "title": "testing with credential",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check for logout button",
+              "fullTitle": "testing with credential Check for logout button",
+              "timedOut": null,
+              "duration": 200,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"ul li a\").contains(\"Logout\");",
+              "err": {},
+              "uuid": "9a40017b-d2df-4ae9-9ff8-dfedc0a5e62d",
+              "parentUUID": "63b1d068-b0a4-47eb-bc9f-317a5b41bfa8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "test content page with mock user",
+              "fullTitle": "testing with credential test content page with mock user",
+              "timedOut": null,
+              "duration": 379,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"p\").contains(\"this is my first task\");\ncy.get(\"button\").contains(\"Edit\");\ncy.get(\"button\").contains(\"Delete\");",
+              "err": {},
+              "uuid": "295dabcb-3f85-4129-878e-26ac67e0c02f",
+              "parentUUID": "63b1d068-b0a4-47eb-bc9f-317a5b41bfa8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9a40017b-d2df-4ae9-9ff8-dfedc0a5e62d",
+            "295dabcb-3f85-4129-878e-26ac67e0c02f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 579,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
